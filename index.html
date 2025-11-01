@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Diego Platas Echeagaray</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header-main">
+        <div class="container">
+            <div class="logo">
+                <h1 data-key="name">Diego Platas Echeagaray</h1>
+                <p class="subtitle" data-key="profile">Desarrollador de back end</p>
+            </div>
+            
+            <button class="menu-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+                &#9776; 
+            </button>
+
+            <div class="nav-wrapper" id="nav-menu">
+                <nav class="nav-main">
+                    <ul>
+                        <li><a href="#sobre-mi" data-key="nav-about">Sobre Mí</a></li>
+                        <li><a href="#proyectos" data-key="nav-projects">Proyectos</a></li>
+                        <li><a href="#habilidades" data-key="nav-skills">Habilidades</a></li>
+                        <li><a href="#contacto" data-key="nav-contact">Contacto</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="lang-switcher">
+                    <button id="lang-es" class="lang-button">ES</button>
+                    <button id="lang-en" class="lang-button">EN</button>
+                    <button id="lang-fr" class="lang-button">FR</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="sobre-mi" class="section-container">
+            <div class="container">
+                <h2 data-key="about-title">Sobre Mí</h2>
+                <div class="sobre-mi-content">
+                    
+                    <img src="imagenes/ingeniero.png" alt="Foto profesional de Diego Platas Echeagaray" class="foto-perfil">
+                    
+                    <div class="sobre-mi-texto">
+                        <p data-key="about-text">
+                            Soy un desarrollador enfocado en el back-end, siempre buscando optimizar y mejorar la eficiencia de las aplicaciones.
+                        </p>
+                        
+                        <a href="certificados-CV/Curriculum vitae Diego Platas.pdf" class="btn" data-key="cv-button" download>Descargar CV (PDF)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="section-container section-light">
+            <div class="container">
+                <h2 data-key="projects-title">Proyectos Principales</h2>
+                <div class="proyectos-grid">
+
+                    <article class="proyecto-card">
+                        <img src="imagenes/Proyecto1.png" alt="Vista previa del Proyecto 1">
+                        <h3 data-key="p1-title">Sitio Web Sobre la materia Etica Profesional</h3>
+                        <p data-key="p1-desc">Una pequeña página web informativa sobre la materia de Ética Profesional.</p>
+                        <p><strong data-key="tech-label">Tecnologías:</strong> [HTML, CSS]</p>
+                        <div class="proyecto-enlaces">
+                            <a href="https://github.com/diegoplatas648-ai/appsweb.git" target="_blank" rel="noopener noreferrer" data-key="repo-link">Ver Código (GitHub)</a>
+                            <a href="https://diegoplatas648-ai.github.io/appsweb/" target="_blank" rel="noopener noreferrer" data-key="demo-link">Ver Demo</a>
+                        </div>
+                    </article>
+
+                    <article class="proyecto-card">
+                        <img src="imagenes/contadordecolores.png" alt="Vista previa del Proyecto 2">
+                        <h3 data-key="p2-title">Contador de colores con Python</h3>
+                        <p data-key="p2-desc">Un programa en Python que cuenta la cantidad de colores en una camara en vivo.</p>
+                        <p><strong data-key="tech-label">Tecnologías:</strong> [Python]</p>
+                        <div class="proyecto-enlaces">
+                            <a href="https://github.com/diegoplatas648-ai/contadorcolors.git" target="_blank" rel="noopener noreferrer" data-key="repo-link">Ver Código (GitHub)</a>
+                            
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades" class="section-container">
+            <div class="container">
+                <h2 data-key="skills-title">Habilidades Técnicas</h2>
+                <div class="habilidades-grid">
+                    
+                    <div class="habilidad-categoria">
+                        <h3 data-key="skills-lang-title">Lenguajes de Programación</h3>
+                        <ul>
+                            <li>Java</li>
+                            <li>Python</li>
+                            <li>C++</li>
+                            <li>CSS</li>
+                            <li>html</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="habilidad-categoria">
+                        <h3 data-key="skills-fw-title">Frameworks y Librerías</h3>
+                        <ul>
+                            <li>React</li>
+                            <li>Angular</li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="habilidad-categoria">
+                        <h3 data-key="skills-tools-title">Herramientas y Bases de Datos</h3>
+                        <ul>
+                            <li>Git,GitHub</li>
+                            <li>MySQL</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="extras" class="section-container section-light">
+            <div class="container">
+                <h3 data-key="certs-title">Certificaciones y Reconocimientos</h3>
+                <ul>
+                    <li>
+                        <a href="certificados-CV/Diego platas certificado CSS essentials.pdf" target="_blank" rel="noopener noreferrer" data-key="cert1-link">
+                            Certificacion CSS essential - Cisco
+                        </a>
+                    </li>
+                    <li>
+                        <a href="certificados-CV/Diego platas certificado HTML essentials.pdf" target="_blank" rel="noopener noreferrer" data-key="cert2-link">
+                            Certificacion HTMl essential - Cisco
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contacto" class="footer-main">
+        <div class="container">
+            <h2 data-key="contact-title">Contacto</h2>
+            
+            <p data-key="contact-text">Puedes contactarme a través de mi correo profesional:</p>
+            <p>2024030208@Upsin.edu.mx</p>
+            
+            <div class="redes-sociales">
+                <a href="https://github.com/diegoplatas648-ai" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+            
+            <p class="copyright" data-key="copyright">&copy; 2025 - Diego Platas Echeagaray. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>

@@ -1,0 +1,462 @@
+/* ============================================= */
+/* RÚBRICA: 1. UX/UI Y COHERENCIA VISUAL  */
+/* Usamos variables CSS (colores, fuentes) para mantener la estética. */
+/* ============================================= */
+:root {
+    --color-primario: #007BFF; /* Un azul profesional */
+    --color-secundario: #0056b3; /* Para enlaces hover */
+    --color-fondo: #f8f9fa; /* Un gris muy claro */
+    --color-fondo-seccion: #ffffff; /* Blanco para secciones */
+    --color-texto-principal: #333333;
+    --color-texto-secundario: #555555;
+    --fuente-principal: 'Arial', 'Helvetica', sans-serif;
+    --sombra-caja: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ============================================= */
+/* RESET BÁSICO Y ESTILOS GLOBALES */
+/* ============================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Para navegación suave en la misma página */
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    line-height: 1.6;
+}
+
+img {
+    /* RÚBRICA: Imágenes proporcionales  */
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--color-primario);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-secundario);
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; color: #333; text-align: center; margin-bottom: 2rem; }
+h3 { font-size: 1.5rem; color: var(--color-primario); }
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* ============================================= */
+/* CLASES DE UTILIDAD (Layout) */
+/* ============================================= */
+.container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.5rem;
+}
+
+.section-container {
+    padding: 4rem 0;
+}
+
+.section-light {
+    background-color: var(--color-fondo-seccion);
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-secundario);
+    color: #ffffff;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* ============================================= */
+/* HEADER Y NAVEGACIÓN */
+/* ============================================= */
+.header-main {
+    background-color: var(--color-fondo-seccion);
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.header-main .container {
+    /* MODIFICADO: Contenedor principal del header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-main .logo h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: var(--color-texto-principal);
+}
+
+.header-main .logo .subtitle {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--color-texto-secundario);
+}
+
+/* Contenedor del menú y selector de idiomas (escritorio) */
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.nav-main ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-main a {
+    font-weight: bold;
+    color: var(--color-texto-secundario);
+    font-size: 1rem;
+}
+
+.nav-main a:hover {
+    color: var(--color-primario);
+    text-decoration: none;
+}
+
+/* Botón de hamburguesa (Oculto en escritorio) */
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color-primario);
+    padding: 0;
+    line-height: 1;
+}
+
+/* ============================================= */
+/* SECCIÓN "SOBRE MÍ" */
+/* ============================================= */
+.sobre-mi-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.foto-perfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Foto circular profesional */
+    object-fit: cover;
+    border: 5px solid var(--color-primario);
+}
+
+.sobre-mi-texto {
+    flex: 1;
+}
+
+.sobre-mi-texto p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* ============================================= */
+/* SECCIÓN "PROYECTOS" */
+/* ============================================= */
+.proyectos-grid {
+    display: grid;
+    /* Columnas responsivas automáticas: */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.proyecto-card {
+    background-color: var(--color-fondo-seccion);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: var(--sombra-caja);
+    overflow: hidden; /* Para que la imagen respete el borde redondeado */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.proyecto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.proyecto-card h3 {
+    padding: 1rem 1.5rem 0.5rem 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.proyecto-card p {
+    padding: 0 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-texto-secundario);
+}
+
+.proyecto-enlaces {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.proyecto-enlaces a {
+    font-weight: bold;
+}
+
+/* ============================================= */
+/* SECCIÓN "HABILIDADES" */
+/* ============================================= */
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.habilidad-categoria {
+    background: var(--color-fondo-seccion);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--sombra-caja);
+}
+
+.habilidad-categoria ul li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-texto-secundario);
+}
+
+/* ============================================= */
+/* SECCIÓN "EXTRAS" (Cert/Idiomas) */
+/* ============================================= */
+.extras-grid {
+    display: flex;
+    gap: 2rem;
+}
+
+.extras-columna {
+    flex: 1;
+}
+
+.extras-columna h3 {
+    border-bottom: 2px solid var(--color-primario);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.extras-columna ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* ============================================= */
+/* FOOTER (CONTACTO) */
+/* ============================================= */
+.footer-main {
+    background-color: #333;
+    color: #f4f4f4;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer-main h2 {
+    color: #ffffff;
+}
+
+.footer-main p {
+    margin-bottom: 1.5rem;
+}
+
+.correo-contacto {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.correo-contacto:hover {
+    color: var(--color-primario);
+}
+
+.redes-sociales {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.redes-sociales a {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.redes-sociales a:hover {
+    color: var(--color-primario);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+/* Estilos del selector de Idiomas */
+.lang-switcher {
+    display: flex; 
+    gap: 8px; 
+    margin-left: 15px; 
+}
+
+.lang-switcher .lang-button {
+    background-color: #f0f0f0; 
+    color: #333; 
+    border: 1px solid #ccc; 
+    padding: 6px 10px; 
+    border-radius: 6px; 
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out; 
+}
+
+.lang-switcher .lang-button:hover {
+    background-color: #e0e0e0; 
+    border-color: #a0a0a0;
+}
+
+.lang-switcher .lang-button.active {
+    background-color: #007bff; 
+    color: white;
+    border-color: #007bff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+/* ============================================= */
+/* RÚBRICA: DISEÑO RESPONSIVO (Móviles) */
+/* ============================================= */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+
+    /* Mostrar el botón de hamburguesa */
+    .menu-toggle {
+        display: block; 
+    }
+    
+    /* Contenedor del menú: Se convierte en un menú lateral deslizable */
+    .nav-wrapper {
+        position: fixed;
+        top: 0;
+        right: -250px; /* OCULTO: Fuera de la pantalla */
+        width: 250px; 
+        height: 100%;
+        background-color: var(--color-fondo-seccion);
+        flex-direction: column; /* Apilar elementos verticalmente */
+        align-items: flex-start;
+        padding: 20px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s ease-in-out;
+        z-index: 99;
+    }
+    
+    /* Estado ACTIVO: Menú abierto */
+    .nav-wrapper.open {
+        right: 0; /* MOSTRAR: Desliza hacia adentro */
+    }
+    
+    /* Overlay para bloquear la interacción con el fondo */
+    body.menu-open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 90; /* Detrás del menú (99) */
+    }
+
+    /* Estilos internos del menú lateral */
+    .nav-main {
+        width: 100%;
+        margin-top: 2rem;
+        padding-top: 10px;
+        border-top: 1px solid #ddd;
+    }
+    
+    .nav-main ul {
+        flex-direction: column; /* Apilar enlaces */
+        gap: 10px;
+    }
+    
+    .nav-main a {
+        display: block; 
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        font-size: 1.1rem;
+    }
+    
+    .lang-switcher {
+        margin-top: 2rem;
+        margin-left: 0; /* Ajustar alineación en el menú lateral */
+        justify-content: flex-start;
+    }
+    
+    /* Ajuste de "Sobre Mí" */
+    .sobre-mi-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .foto-perfil {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Ajuste de "Extras" */
+    .extras-grid {
+        flex-direction: column;
+    }
+}
